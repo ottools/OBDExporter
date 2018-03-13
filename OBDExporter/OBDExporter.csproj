@@ -33,10 +33,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OpenTibia, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="7zip, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>OpenTibia\OpenTibia.dll</HintPath>
+      <HintPath>DLLs\7zip.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTibia, Version=0.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\OpenTibia.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -86,7 +93,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="OpenTibia\OpenTibia.dll" />
+    <Content Include="app_icon.ico" />
+    <None Include="Resources\app_icon.ico" />
     <Content Include="versions.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
