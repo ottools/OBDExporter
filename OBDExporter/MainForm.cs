@@ -131,9 +131,16 @@ namespace OBDExporter
         {
             base.OnLoad(args);
 
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            FileVersionInfo version = FileVersionInfo.GetVersionInfo(assembly.Location);
-            Text = "OBDExporter " + version.FileVersion;
+            try
+            {
+                Assembly assembly = Assembly.GetExecutingAssembly();
+                string version = FileVersionInfo.GetVersionInfo(assembly.Location).FileVersion;
+                Text = "OBDExporter " + version.Substring(0, version.LastIndexOf("."));
+            }
+            catch
+            {
+                Text = "OBDExporter";
+            }
         }
 
         private void ClientLoaded_Handler(object sender, EventArgs args)
